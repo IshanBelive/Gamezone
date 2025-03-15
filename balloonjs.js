@@ -1,3 +1,5 @@
+
+
 const gameArea = document.getElementById("gameArea");
 const scoreDisplay = document.getElementById("score");
 const startButton = document.getElementById("startButton");
@@ -27,8 +29,11 @@ balloon.addEventListener("click", function() {
     score++;
         scoreDisplay.innerText = score;
         balloon.remove(); });
-
-    gameArea.appendChild(balloon);
+    //     balloon.addEventListener("click", function() {
+    //         score++;
+    //             scoreDisplay.innerText = score;
+    //             balloon.remove(); });
+    // gameArea.appendChild(balloon);
 
     let position = 0;
     const balloonMove = setInterval(() => {
@@ -36,10 +41,7 @@ balloon.addEventListener("click", function() {
         balloon.style.bottom = `${position}px`;
         if (position > gameArea.offsetHeight) {
             balloon.remove();
-            clearInterval(balloonMove);
-        }
-    }, 20);
-}
+            clearInterval(balloonMove);}}, 20);}
 function endGame() {
     clearInterval(balloonInterval);
     startButton.disabled = false;
